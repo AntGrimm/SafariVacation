@@ -64,9 +64,7 @@ namespace SafariVacation
     {
       var db = new SafariContext();
       var animalSeen = db.SeenAnimal
-      .Where(SeenAnimals => SeenAnimals.Species == "Lion")
-      //   .Where(SeenAnimals => SeenAnimals.Species == "Tiger")
-      //   .Where(SeenAnimals => SeenAnimals.Species == "Bear")
+      .Where(SeenAnimals => SeenAnimals.Species == "Bear" || SeenAnimals.Species == "Lion" || SeenAnimals.Species == "Tiger")
       .Select(SeenAnimals => SeenAnimals.CountOfTimesSeen);
       foreach (var animal in animalSeen)
       {
